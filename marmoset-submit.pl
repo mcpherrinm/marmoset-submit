@@ -33,12 +33,9 @@ my @whats = grep /td class=.description/, split("\n", $m->content);
 my $idx = 1;
 my $which = -1;
 foreach(@whats) {
-  print "$idx: ";
   if($_ =~ m/$assignment/) {
-    print "Match: ";
     $which = $idx;
   }
-  print $_ . "\n";
   $idx++;
 }
 
@@ -56,3 +53,5 @@ $m->form_number(0);
 $m->field('file' => $file);
 $m->submit();
 die unless ($m->success);
+print "Success!\n";
+print $m->content;
