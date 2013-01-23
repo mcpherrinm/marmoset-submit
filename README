@@ -12,3 +12,5 @@ change the environment variable USER, like so:
 USER=mimcpher marmoset-submit.pl CS444 A1 handin.zip
 
 Your password will be prompted for interactively.
+
+Tested and working on both Linux and OS X.
