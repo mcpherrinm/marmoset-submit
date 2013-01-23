@@ -55,3 +55,4 @@ if(!($m->content =~ m/Submit project $assignment for $thisclass in/)) {
 $m->form_number(0);
 $m->field('file' => $file);
 $m->submit();
+die unless ($m->success);
