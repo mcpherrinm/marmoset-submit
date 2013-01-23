@@ -20,7 +20,8 @@ $m->get("http://marmoset.student.cs.uwaterloo.ca");
 my $password = prompt('Password: ', -e => '*');
 
 my $fields = {
-  'username' => 'mimcpher',
+  ## Todo: Your local username may not match your CAS one.
+  'username' => $ENV{'USER'},
   'password' => $password,
 };
 
