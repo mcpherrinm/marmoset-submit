@@ -41,7 +41,7 @@ foreach(@whats) {
 }
 
 if($which < 0) {
-  die "Didn't find the assignment. Choose one of:";
+  die "Didn't find the assignment. Choose a name from the website, like A1";
 }
 
 my @submits = $m->follow_link( text => 'submit', n => $which );
@@ -55,4 +55,3 @@ $m->field('file' => $file);
 $m->submit();
 die unless ($m->success);
 print "Success!\n";
-print $m->content;
