@@ -1,1 +1,14 @@
-Marmoset.  Perl script to submit.
+Marmoset is an automated testing and marking environment used by some Waterloo
+CS classes.
+
+This is a Perl script to automate submission to it via the command line,
+including doing the CAS authentication.
+
+Usage is simple:
+marmoset-submit.pl CS444 A1 handin.zip
+
+If your local system username does not match that on Marmoset, you should
+change the environment variable USER, like so:
+USER=mimcpher marmoset-submit.pl CS444 A1 handin.zip
+
+Your password will be prompted for interactively.
