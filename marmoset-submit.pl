@@ -26,6 +26,9 @@ my $fields = {
 };
 
 $m->submit_form(form_number => 0, fields => $fields);
+if($m->content =~ /your password are incorrect/) {
+  die "Username ($ENV{'USER'}) or password wrong"
+}
 
 #Then we submit the "authenticate as" with the first option
 $m->submit_form(form_number => 0);
@@ -55,4 +58,3 @@ $m->field('file' => $file);
 $m->submit();
 die unless ($m->success);
 print "Success!\n";
-print $m->content;
