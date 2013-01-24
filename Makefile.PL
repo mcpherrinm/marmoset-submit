@@ -1,0 +1,19 @@
+use inc::Module::Install;
+
+use strict;
+use warnings;
+
+name 'MarmosetSubmit';
+abstract 'Command-line tool for the University of Waterloo\'s Marmoset';
+author 'Matthew McPherrin <github@mcpherrin.ca>';
+version '0.1';
+
+requires 'WWW::Mechanize' => '1.7.2';
+requires 'IO::Prompt' => '0.997002';
+requires 'LWP::Protocol::https' => '6.03';
+
+installdirs 'perl';
+install_script 'marmosetsubmit';
+
+auto_install;
+WriteAll;

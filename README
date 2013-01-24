@@ -1,6 +1,11 @@
 Marmoset is an automated testing and marking environment used by some Waterloo
 CS classes.
 
+Installation
+perl Makefile.PL
+make
+make install
+
 This is a Perl script to automate submission to it via the command line,
 including doing the CAS authentication.
 
