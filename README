@@ -16,9 +16,9 @@ install the required perl modules:
 Usage is simple:
   marmosetsubmit CS444 A1 handin.zip
 
-If your local system username does not match that on Marmoset, you should
-change the environment variable USER, like so:
-  USER=mimcpher marmosetsubmit CS444 A1 handin.zip
+There is an optional --username (-u) argument to set your username which
+defaults to your system username.
+  marmosetsubmit -u mimcpher CS444 A1 handin.zip
 
 Your password will be prompted for interactively.
 

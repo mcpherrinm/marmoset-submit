@@ -13,7 +13,7 @@ my $assignment = shift;
 my $file = shift;
 if(!$thisclass || !$assignment || !$file) {
   print "Usage:\n";
-  print "./marmoset-submit.pl CS444 A1Code release.zip\n";
+  print "./marmoset-submit.pl [-u username] COURSE ASSIGNMENT FILE\n";
   exit;
 }
 
