@@ -1,8 +1,12 @@
 #!/usr/bin/env perl
 
-use WWW::Mechanize;
+use Getopt::Long;
 use IO::Prompt;
+use WWW::Mechanize;
 use strict;
+
+my $username = $ENV{'USER'};
+GetOptions('username|u=s' => \$username);
 
 my $thisclass = shift;
 my $assignment = shift;
@@ -20,14 +24,13 @@ $m->get("http://marmoset.student.cs.uwaterloo.ca");
 my $password = prompt('Password: ', -e => '*');
 
 my $fields = {
-  ## Todo: Your local username may not match your CAS one.
-  'username' => $ENV{'USER'},
+  'username' => $username,
   'password' => $password,
 };
 
 $m->submit_form(form_number => 0, fields => $fields);
 if($m->content =~ /your password are incorrect/) {
-  die "Username ($ENV{'USER'}) or password wrong"
+  die "Username ($username) or password wrong"
 }
 
 #Then we submit the "authenticate as" with the first option
